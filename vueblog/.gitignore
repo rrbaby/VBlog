@@ -13,8 +13,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 /.project
-<<<<<<< HEAD
-/.settings
-=======
-/.settings
->>>>>>> refs/remotes/origin/master
+/.settings/
+
