@@ -8,9 +8,14 @@
     <el-form-item prop="checkPass">
       <el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="密码"></el-input>
     </el-form-item>
-    <el-checkbox class="login_remember" v-model="checked" label-position="left">记住密码</el-checkbox>
+    <el-checkbox class="login_remember" v-model="checked" label-position="right">记住密码</el-checkbox>
+    <router-link to="/register" class="login_register">注册用户</router-link>
+    <!-- <<el-form-item>
+
+    </el-form-item> -->
     <el-form-item style="width: 100%">
       <el-button type="primary" @click.native.prevent="submitClick" style="width: 100%">登录</el-button>
+     
     </el-form-item>
   </el-form>
 </template>
@@ -80,7 +85,14 @@
   }
 
   .login_remember {
-    margin: 0px 0px 35px 0px;
-    text-align: left;
+    margin: 0px 0px 15px 0px;
+    text-align: right;
+  }
+
+  .login_register{
+    color: #409EFF;
+    float: right;
+    font-size: 14px;
+    text-decoration: none;
   }
 </style>

@@ -8,6 +8,7 @@ import DataCharts from '@/components/DataCharts'
 import PostArticle from '@/components/PostArticle'
 import UserMana from '@/components/UserMana'
 import BlogDetail from '@/components/BlogDetail'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -23,7 +24,12 @@ export default new Router({
       name: '',
       component: Home,
       hidden: true
-    }, {
+    },{
+          path: '/register',
+          name: '注册用户',
+          component: Register,
+          hidden: true
+    },{
       path: '/home',
       component: Home,
       name: '文章管理',
