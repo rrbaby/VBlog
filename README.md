@@ -1,4 +1,4 @@
-V部落是一个多用户博客管理平台，采用Vue+SpringBoot开发。  
+ceshiV部落是一个多用户博客管理平台，采用Vue+SpringBoot开发。  
 
 项目演示地址： [http://45.77.146.32:8081/index.html](http://45.77.146.32:8081/index.html)  
 
