@@ -8,7 +8,7 @@ import DataCharts from '@/components/DataCharts'
 import PostArticle from '@/components/PostArticle'
 import UserMana from '@/components/UserMana'
 import BlogDetail from '@/components/BlogDetail'
-import Comment from '@/components/Comment'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -24,7 +24,12 @@ export default new Router({
       name: '',
       component: Home,
       hidden: true
-    }, {
+    },{
+          path: '/register',
+          name: '注册用户',
+          component: Register,
+          hidden: true
+    },{
       path: '/home',
       component: Home,
       name: '文章管理',
@@ -48,24 +53,15 @@ export default new Router({
           path: '/blogDetail',
           name: '博客详情',
           component: BlogDetail,
-          // hidden: true,
+          hidden: true,
           meta: {
             keepAlive: false
           }
-
         }, {
           path: '/editBlog',
           name: '编辑博客',
           component: PostArticle,
-          // hidden: true,
-          meta: {
-            keepAlive: false
-          }
-        },{
-          path: '/buttonTest',
-          name: '按钮测试',
-          component: Comment,
-          // hidden: true,
+          hidden: true,
           meta: {
             keepAlive: false
           }
