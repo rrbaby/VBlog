@@ -1,8 +1,11 @@
 package org.sang.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.sang.bean.RespBean;
 import org.sang.bean.User;
 import org.sang.service.UserService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,13 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class LoginRegController {
-
+	private static final Log logger  = LogFactory.getLog(LoginRegController.class);
+	
+	
     @Autowired
     UserService userService;
+    
+    
+    @RequestMapping("/login")
+    public RespBean login() {
+    		return new RespBean("success","登录成功!");
+	}
 
     @RequestMapping("/login_error")
     public RespBean loginError() {
         return new RespBean("error", "登录失败!");
+        
     }
 
     @RequestMapping("/login_success")
@@ -35,6 +47,7 @@ public class LoginRegController {
      */
     @RequestMapping("/login_page")
     public RespBean loginPage() {
+    		logger.info("=====test=======");
         return new RespBean("error", "尚未登录，请登录!");
     }
 
