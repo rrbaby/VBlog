@@ -25,10 +25,10 @@ export default new Router({
       component: Home,
       hidden: true
     },{
-          path: '/register',
-          name: '注册用户',
-          component: Register,
-          hidden: true
+        path: '/register',
+        name: '注册用户',
+        component: Register,
+        hidden: true
     },{
       path: '/home',
       component: Home,

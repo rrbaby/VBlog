@@ -1,7 +1,7 @@
 <template>
-	<el-form :model="form" ref="loginForm" label-width="90px" class="login-container">
+	<el-form :model="form" ref="loginForm" :rules="rules" label-width="90px" class="login-container">
 		<h2>用户注册</h2>
-	    <el-form-item label="用户名" required prop="username">
+	    <el-form-item label="用户名" prop="username">
 	        <el-input v-model="form.username" placeholder="请输入用户名" ></el-input>
 	    </el-form-item>
 	    <el-form-item label="密码" prop="password">
@@ -26,26 +26,26 @@
   export default {
   	data(){
 
-		var validatePass = (rule,value,callback) => {
-			if(value === ''){
-				callback(new Error('请输入密码'));
-			} else {
-	 		 	if (this.loginForm.checkPass !== value) {
-		            this.$refs.loginForm.validateField('repassword');
-	         	}
-	        }
-  			callback();
-		};
+    	var validatePass = (rule,value,callback) => {
+    		if(value === ''){
+    			callback(new Error('请输入密码'));
+    		} else {
+     		 	if (this.loginForm.checkPass !== value) {
+    	            this.$refs.loginForm.validateField('repassword');
+             	}
+            }
+    			callback();
+    	};
 
-		var validatePass2 = (rule,value,callback) => {
-			if(value===''){
-				callback(new Error('请再次输入密码'));
-			}else{
-				if(this.$refs.loginForm.password!==value){
-					callback(new Error('两次输入的密码不一致'));
-				}
-			}	
-		};
+    	var validatePass2 = (rule,value,callback) => {
+    		if(value===''){
+    			callback(new Error('请再次输入密码'));
+    		}else{
+    			if(this.$refs.loginForm.password!==value){
+    				callback(new Error('两次输入的密码不一致'));
+    			}
+    		}	
+    	};
 
   		return {
   			form:{
@@ -67,7 +67,7 @@
   					min:6,max:9,message:'密码长度在6-9个字符',trigger:'blur'
   				}],
   				email:[{
-  					type:'email',trigger:'blur,change',required:true
+  					type:'email',trigger:'blur,change',required:true,message:'请填写邮箱账号'
   				}],
   				username:[{
   					required:true,message:'请输入用户名',trigger:'blur'
